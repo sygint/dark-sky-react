@@ -7,8 +7,11 @@ it("renders without crashing", () => {
   const mockWeather = {
     currently: {
       icon: "clear-night",
-      time: 1552897151,
+      summary: "Clear",
       temperature: 55.71
+    },
+    hourly: {
+      summary: "Partly cloudy starting tomorrow morning."
     },
     timezone: "America/Los_Angeles"
   };
