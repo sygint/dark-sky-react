@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div>
+  <div>
+    clear-night
+  </div>
+  <div>
+    56
+    ° 
+    .
+  </div>
+  <div>
+    as of 
+    Monday, March 18, 2019
+  </div>
+</div>
+`;
