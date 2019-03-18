@@ -1,0 +1,18 @@
+.weather-icon {
+  width: 50px !important;
+  height: 50px !important;
+  background-position: center center;
+  background-size: 200%;
+}
+
+.summary {
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3em;
+  }
+  .extra {
+    display: inline-block;
+    min-width: 120px;
+  }
+}

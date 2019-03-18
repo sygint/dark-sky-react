@@ -1,26 +1,44 @@
 import React from "react";
 
-import { formatDate } from "../../helpers/date";
+import "./WeatherCard.scss";
 
 function WeatherCard({ weather }) {
   console.log(weather);
 
-  const { currently, timezone } = weather;
-  const { icon, summary, temperature, time } = currently;
-  const formattedTime = formatDate(
-    new Date(
-      new Date(time * 1000).toLocaleString("en-US", { timeZone: timezone })
-    )
-  );
+  const { currently, hourly } = weather;
+  const { summary: currentSummary, temperature } = currently;
+  const { summary: hourlySummary } = hourly;
+
   const roundedTemperature = Math.round(temperature);
 
   return (
-    <div>
-      <div>{icon}</div>
-      <div>
-        {roundedTemperature}&deg; {summary}.
+    <div className="ui comments">
+      <div className="comment">
+        <div
+          className="avatar weather-icon"
+          style={{
+            backgroundImage: `url('/images/clear-day.svg')`
+          }}
+        />
+
+        <div className="content summary">
+          <div className="title">
+            {roundedTemperature}&deg; {currentSummary}.
+          </div>
+          <div>
+            <div className="extra">
+              <span>Feels like:</span> X
+            </div>
+            <div className="extra">
+              <span>Low:</span> X
+            </div>
+            <div className="extra">
+              <span>High:</span> X
+            </div>
+          </div>
+          <div>{hourlySummary}</div>
+        </div>
       </div>
-      <div>as of {formattedTime}</div>
     </div>
   );
 }
