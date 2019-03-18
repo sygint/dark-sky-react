@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<span
+  className="weather-detail"
+>
+  <span
+    className="weather-detail-name"
+  >
+    Feels Like
+    :
+  </span>
+   
+  35°
+</span>
+`;
