@@ -1,6 +1,7 @@
 import React from "react";
 
 import WeatherIcon from "../WeatherIcon";
+import WeatherDetail from "../WeatherDetail";
 
 import "./WeatherCard.scss";
 
@@ -20,16 +21,10 @@ function WeatherCard({ weather }) {
           <div className="title">
             {roundedTemperature}&deg; {currentSummary}.
           </div>
-          <div>
-            <div className="extra">
-              <span>Feels like:</span> X
-            </div>
-            <div className="extra">
-              <span>Low:</span> X
-            </div>
-            <div className="extra">
-              <span>High:</span> X
-            </div>
+          <div className="details">
+            <WeatherDetail name="Feels like" value="x" />
+            <WeatherDetail name="Low" value="x" />
+            <WeatherDetail name="High" value="x" />
           </div>
           <div>{hourlySummary}</div>
         </div>

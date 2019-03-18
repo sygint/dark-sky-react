@@ -1,0 +1,13 @@
+.weather-detail {
+  margin-right: 6px;
+  line-height: 1.5;
+  font-size: 1.15rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.weather-detail-name {
+  font-weight: bold;
+}

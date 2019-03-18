@@ -21,31 +21,21 @@ exports[`renders without crashing 1`] = `
         Clear
         .
       </div>
-      <div>
-        <div
-          className="extra"
-        >
-          <span>
-            Feels like:
-          </span>
-           X
-        </div>
-        <div
-          className="extra"
-        >
-          <span>
-            Low:
-          </span>
-           X
-        </div>
-        <div
-          className="extra"
-        >
-          <span>
-            High:
-          </span>
-           X
-        </div>
+      <div
+        className="details"
+      >
+        <WeatherDetail
+          name="Feels like"
+          value="x"
+        />
+        <WeatherDetail
+          name="Low"
+          value="x"
+        />
+        <WeatherDetail
+          name="High"
+          value="x"
+        />
       </div>
       <div>
         Partly cloudy starting tomorrow morning.
