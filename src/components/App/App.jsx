@@ -2,30 +2,32 @@ import React, { Component } from "react";
 
 import WeatherCard from "../WeatherCard";
 
-import Axios from "axios";
+// import Axios from "axios";
+
+import mock from "./mock.json";
 
 class App extends Component {
-  state = { weather: null, errorMessage: "" };
+  state = { weather: mock, errorMessage: "" };
 
-  componentDidMount() {
-    window.navigator.geolocation.getCurrentPosition(
-      async position => {
-        const { latitude, longitude } = position.coords;
+  // componentDidMount() {
+  //   window.navigator.geolocation.getCurrentPosition(
+  //     async position => {
+  //       const { latitude, longitude } = position.coords;
 
-        try {
-          const response = await Axios.get(
-            `http://localhost:3001/weather/${latitude},${longitude}`
-          );
-          const weather = response.data;
+  //       try {
+  //         const response = await Axios.get(
+  //           `http://localhost:3001/weather/${latitude},${longitude}`
+  //         );
+  //         const weather = response.data;
 
-          this.setState({ weather });
-        } catch (err) {
-          console.log(err);
-        }
-      },
-      err => this.setState({ errorMessage: err.message })
-    );
-  }
+  //         this.setState({ weather });
+  //       } catch (err) {
+  //         console.log(err);
+  //       }
+  //     },
+  //     err => this.setState({ errorMessage: err.message })
+  //   );
+  // }
 
   renderWeatherCard() {
     const { weather, errorMessage } = this.state;
