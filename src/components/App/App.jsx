@@ -43,8 +43,8 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        <div>{this.renderWeatherCard()}</div>
+      <div className="ui container">
+        {this.renderWeatherCard()}
         <div>
           <a href="https://darksky.net/poweredby/" alt="Powered by Dark Sky">
             Powered by Dark Sky
@@ -61,7 +61,7 @@ class App extends Component {
             Adam Whitcroft
           </a>
         </div>
-      </>
+      </div>
     );
   }
 }
