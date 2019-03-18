@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="avatar weather-icon"
+  style={
+    Object {
+      "backgroundImage": "url('/images/clear-day.svg')",
+    }
+  }
+/>
+`;

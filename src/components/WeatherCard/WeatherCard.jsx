@@ -1,12 +1,12 @@
 import React from "react";
 
+import WeatherIcon from "../WeatherIcon";
+
 import "./WeatherCard.scss";
 
 function WeatherCard({ weather }) {
-  console.log(weather);
-
   const { currently, hourly } = weather;
-  const { summary: currentSummary, temperature } = currently;
+  const { icon, summary: currentSummary, temperature } = currently;
   const { summary: hourlySummary } = hourly;
 
   const roundedTemperature = Math.round(temperature);
@@ -14,12 +14,7 @@ function WeatherCard({ weather }) {
   return (
     <div className="ui comments">
       <div className="comment">
-        <div
-          className="avatar weather-icon"
-          style={{
-            backgroundImage: `url('/images/clear-day.svg')`
-          }}
-        />
+        <WeatherIcon icon={icon} />
 
         <div className="content summary">
           <div className="title">
