@@ -53,14 +53,14 @@ class App extends Component {
           </a>{" "}
           |{" "}
           <a
-            href="http://adamwhitcroft.com/climacons/"
-            alt="Icons by Adam Whitcroft"
+            href="https://www.amcharts.com/free-animated-svg-weather-icons/"
+            alt="Icons by amCharts"
           >
             Icons
           </a>{" "}
           by{" "}
-          <a href="http://adamwhitcroft.com" alt="Adam Whitcroft's website">
-            Adam Whitcroft
+          <a href="http://amcharts.com" alt="amCharts website">
+            amCharts
           </a>
         </div>
       </div>
