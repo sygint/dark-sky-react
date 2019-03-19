@@ -11,6 +11,12 @@ function WeatherCard({ weather }) {
   const { summary: hourlySummary } = hourly;
 
   const roundedTemperature = Math.round(temperature);
+  const hourlyTemps = hourly.data.map(h => h.temperature);
+  const tempHigh = Math.max(...hourlyTemps);
+  const tempLow = Math.min(...hourlyTemps);
+
+  console.log(tempHigh);
+  console.log(tempLow);
 
   return (
     <>
@@ -24,8 +30,8 @@ function WeatherCard({ weather }) {
             </div>
             <div className="details">
               <WeatherDetail name="Feels like" value="x" />
-              <WeatherDetail name="Low" value="x" />
-              <WeatherDetail name="High" value="x" />
+              <WeatherDetail name="Low" value={tempLow} temperature="true" />
+              <WeatherDetail name="High" value={tempHigh} temperature="true" />
             </div>
           </div>
         </div>
