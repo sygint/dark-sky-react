@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import WeatherCard from "../WeatherCard";
+import WeatherDetail from "../WeatherDetail";
 
 import "./App.css";
 
@@ -67,11 +68,38 @@ class App extends Component {
   }
 
   render() {
+    const { currently } = this.state.weather;
+    const {
+      windSpeed: wind,
+      humidity,
+      dewPoint,
+      uvIndex,
+      visibility,
+      pressure
+    } = currently;
+
+    const formattedWindSpeed = Math.round(wind);
+    const formattedHumidity = Math.round(humidity);
+    const formattedDewPoint = Math.round(dewPoint);
+    const formattedUvIndex = Math.round(uvIndex);
+    const formattedVisibility = Math.round(visibility);
+    const formattedPressure = Math.round(pressure);
+
     return (
-      <div className="ui container">
-        {this.renderWeatherCard()}
-        {this.renderAttribution()}
-      </div>
+      <>
+        <div className="weather-details-secondary">
+          <WeatherDetail name="Wind" value={formattedWindSpeed} />
+          <WeatherDetail name="Humidity" value={formattedHumidity} />
+          <WeatherDetail name="Dew Pt" value={formattedDewPoint} />
+          <WeatherDetail name="UV Index" value={formattedUvIndex} />
+          <WeatherDetail name="Visibility" value={formattedVisibility} />
+          <WeatherDetail name="Pressure" value={formattedPressure} />
+        </div>
+        <div className="ui container">
+          {this.renderWeatherCard()}
+          {this.renderAttribution()}
+        </div>
+      </>
     );
   }
 }

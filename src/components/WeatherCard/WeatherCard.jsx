@@ -15,9 +15,6 @@ function WeatherCard({ weather }) {
   const tempHigh = Math.max(...hourlyTemps);
   const tempLow = Math.min(...hourlyTemps);
 
-  console.log(tempHigh);
-  console.log(tempLow);
-
   return (
     <>
       <div className="ui comments">
