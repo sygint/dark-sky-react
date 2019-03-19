@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import WeatherCard from "../WeatherCard";
 import WeatherDetail from "../WeatherDetail";
+import Attribution from "../Attribution";
 
 import "./App.css";
 
@@ -46,27 +47,6 @@ class App extends Component {
     return "Loading...";
   }
 
-  renderAttribution() {
-    return (
-      <div>
-        <a href="https://darksky.net/poweredby/" alt="Powered by Dark Sky">
-          Powered by Dark Sky
-        </a>{" "}
-        |{" "}
-        <a
-          href="https://www.amcharts.com/free-animated-svg-weather-icons/"
-          alt="Icons by amCharts"
-        >
-          Icons
-        </a>{" "}
-        by{" "}
-        <a href="http://amcharts.com" alt="amCharts website">
-          amCharts
-        </a>
-      </div>
-    );
-  }
-
   render() {
     const { currently } = this.state.weather;
     const {
@@ -97,7 +77,7 @@ class App extends Component {
         </div>
         <div className="ui container">
           {this.renderWeatherCard()}
-          {this.renderAttribution()}
+          <Attribution />
         </div>
       </>
     );

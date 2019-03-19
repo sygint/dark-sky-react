@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="attributions"
+>
+  <span
+    className="attribution"
+  >
+    <a
+      alt="Powered by Dark Sky"
+      href="https://darksky.net/poweredby/"
+    >
+      Powered by Dark Sky
+    </a>
+  </span>
+  <a
+    alt="Icons by amCharts"
+    href="https://www.amcharts.com/free-animated-svg-weather-icons/"
+  >
+    Icons
+  </a>
+   
+  by
+   
+  <a
+    alt="amCharts website"
+    href="http://amcharts.com"
+  >
+    amCharts
+  </a>
+</div>
+`;

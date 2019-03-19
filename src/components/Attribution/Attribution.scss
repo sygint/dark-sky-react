@@ -1,0 +1,11 @@
+.attributions {
+  margin-top: 30px;
+  line-height: 5rem;
+
+  span:after {
+    margin: 0 10px;
+    display: inline-block;
+    content: "☂";
+    color: #000;
+  }
+}
