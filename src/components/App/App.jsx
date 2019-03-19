@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import WeatherCard from "../WeatherCard";
 
+import "./App.css";
+
 // import Axios from "axios";
 
 import mock from "./mock.json";

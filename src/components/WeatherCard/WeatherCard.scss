@@ -1,4 +1,14 @@
-.summary .title {
+// override Semantic
+.comments {
+  display: inline-block;
+  text-align: left;
+}
+
+.weather-long-summary {
+  font-size: 28px;
+}
+
+.weather-main {
   font-size: 32px;
   font-weight: 600;
   line-height: 1.3em;
