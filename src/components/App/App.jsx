@@ -4,6 +4,8 @@ import WeatherCard from "../WeatherCard";
 import WeatherDetail from "../WeatherDetail";
 import Attribution from "../Attribution";
 
+import { DEGREE_SIGN } from "../../constants";
+
 import "./App.css";
 
 // import Axios from "axios";
@@ -68,17 +70,41 @@ class App extends Component {
     return (
       <>
         <div className="weather-details-secondary">
-          <WeatherDetail name="Wind" value={formattedWindSpeed} />
-          <WeatherDetail name="Humidity" value={formattedHumidity} />
-          <WeatherDetail name="Dew Pt" value={formattedDewPoint} />
-          <WeatherDetail name="UV Index" value={formattedUvIndex} />
-          <WeatherDetail name="Visibility" value={formattedVisibility} />
-          <WeatherDetail name="Pressure" value={formattedPressure} />
+          <WeatherDetail
+            name="Wind"
+            value={formattedWindSpeed}
+            unit="mph"
+            className="secondary"
+          />
+          <WeatherDetail
+            name="Humidity"
+            value={formattedHumidity}
+            unit="%"
+            noSpace={true}
+            className="secondary"
+          />
+          <WeatherDetail
+            name="Dew Pt"
+            value={formattedDewPoint}
+            unit={DEGREE_SIGN}
+            noSpace={true}
+            className="secondary"
+          />
+          <WeatherDetail
+            name="UV Index"
+            value={formattedUvIndex}
+            className="secondary"
+          />
+          <WeatherDetail
+            name="Visibility"
+            value={formattedVisibility}
+            unit="mi"
+            className="secondary"
+          />
+          <WeatherDetail name="Pressure" value={formattedPressure} unit="mb" />
         </div>
-        <div className="ui container">
-          {this.renderWeatherCard()}
-          <Attribution />
-        </div>
+        <div className="ui container">{this.renderWeatherCard()}</div>
+        <Attribution />
       </>
     );
   }

@@ -2,9 +2,6 @@
   text-align: center;
 }
 
-.weather-details-secondary {
-  text-align: center;
-  font-size: 14px;
-  background-color: rgba(238, 238, 238, 0.35);
-  line-height: 40px;
+.ui.comments .comment > .avatar ~ .content {
+  margin-left: 5.5em;
 }

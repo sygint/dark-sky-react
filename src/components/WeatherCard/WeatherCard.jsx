@@ -3,6 +3,8 @@ import React from "react";
 import WeatherIcon from "../WeatherIcon";
 import WeatherDetail from "../WeatherDetail";
 
+import { DEGREE_SIGN } from "../../constants";
+
 import "./WeatherCard.scss";
 
 function WeatherCard({ weather }) {
@@ -23,12 +25,22 @@ function WeatherCard({ weather }) {
 
           <div className="content summary">
             <div className="weather-main">
-              {roundedTemperature}&deg; {currentSummary}.
+              {roundedTemperature + DEGREE_SIGN} {currentSummary}.
             </div>
             <div className="details">
               <WeatherDetail name="Feels like" value="x" />
-              <WeatherDetail name="Low" value={tempLow} temperature="true" />
-              <WeatherDetail name="High" value={tempHigh} temperature="true" />
+              <WeatherDetail
+                name="Low"
+                value={tempLow}
+                unit={DEGREE_SIGN}
+                noSpace={true}
+              />
+              <WeatherDetail
+                name="High"
+                value={tempHigh}
+                unit={DEGREE_SIGN}
+                noSpace={true}
+              />
             </div>
           </div>
         </div>
