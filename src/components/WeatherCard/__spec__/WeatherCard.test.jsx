@@ -11,6 +11,14 @@ it("renders without crashing", () => {
       temperature: 55.71
     },
     hourly: {
+      data: [
+        {
+          temperature: 10
+        },
+        {
+          temperature: 50
+        }
+      ],
       summary: "Partly cloudy starting tomorrow morning."
     },
     timezone: "America/Los_Angeles"

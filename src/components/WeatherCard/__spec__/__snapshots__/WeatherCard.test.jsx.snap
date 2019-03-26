@@ -1,46 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<div
-  className="ui comments"
->
+<Fragment>
   <div
-    className="comment"
+    className="ui comments"
   >
-    <WeatherIcon
-      icon="clear-night"
-    />
     <div
-      className="content summary"
+      className="comment"
     >
+      <WeatherIcon
+        icon="clear-night"
+      />
       <div
-        className="title"
+        className="content summary"
       >
-        56
-        ° 
-        Clear
-        .
-      </div>
-      <div
-        className="details"
-      >
-        <WeatherDetail
-          name="Feels like"
-          value="x"
-        />
-        <WeatherDetail
-          name="Low"
-          value="x"
-        />
-        <WeatherDetail
-          name="High"
-          value="x"
-        />
-      </div>
-      <div>
-        Partly cloudy starting tomorrow morning.
+        <div
+          className="weather-main"
+        >
+          56°
+           
+          Clear
+          .
+        </div>
+        <div
+          className="details"
+        >
+          <WeatherDetail
+            name="Feels like"
+            value="x"
+          />
+          <WeatherDetail
+            name="Low"
+            noSpace={true}
+            unit="°"
+            value={10}
+          />
+          <WeatherDetail
+            name="High"
+            noSpace={true}
+            unit="°"
+            value={50}
+          />
+        </div>
       </div>
     </div>
   </div>
-</div>
+  <div
+    className="weather-long-summary"
+  >
+    Partly cloudy starting tomorrow morning.
+  </div>
+</Fragment>
 `;

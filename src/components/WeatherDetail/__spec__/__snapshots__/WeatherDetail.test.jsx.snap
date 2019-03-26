@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <span
-  className="weather-detail"
+  className="weather-detail "
 >
   <span
     className="weather-detail-name"
@@ -12,5 +12,6 @@ exports[`renders without crashing 1`] = `
   </span>
    
   35°
+   
 </span>
 `;
