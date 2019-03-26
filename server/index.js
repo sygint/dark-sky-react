@@ -5,7 +5,7 @@ const Axios = require("axios");
 const cors = require("cors");
 
 const app = express();
-const { PORT, API_KEY } = process.env;
+const { SERVER_PORT, API_KEY } = process.env;
 const corsOptions = {
   origin: "http://localhost:3000"
 };
@@ -32,6 +32,6 @@ app.get("/weather/:coords", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+app.listen(SERVER_PORT, () => {
+  console.log(`listening on port ${SERVER_PORT}`);
 });
