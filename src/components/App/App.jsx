@@ -8,32 +8,35 @@ import { DEGREE_SIGN } from "../../constants";
 
 import "./App.css";
 
-// import Axios from "axios";
-
 import mock from "./mock.json";
 
 class App extends Component {
   state = { weather: mock, errorMessage: "" };
 
-  // componentDidMount() {
-  //   window.navigator.geolocation.getCurrentPosition(
-  //     async position => {
-  //       const { latitude, longitude } = position.coords;
+  componentDidMount() {
+    window.navigator.geolocation.getCurrentPosition(
+      async position => {
+        const { latitude, longitude } = position.coords;
 
-  //       try {
-  //         const response = await Axios.get(
-  //           `http://localhost:3001/weather/${latitude},${longitude}`
-  //         );
-  //         const weather = response.data;
+        try {
+          const res = await fetch("/.netlify/functions/weather", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ latitude, longitude })
+          });
+          const weather = await res.json();
 
-  //         this.setState({ weather });
-  //       } catch (err) {
-  //         console.log(err);
-  //       }
-  //     },
-  //     err => this.setState({ errorMessage: err.message })
-  //   );
-  // }
+
+          this.setState({ weather });
+        } catch (err) {
+          console.log(err);
+        }
+      },
+      err => this.setState({ errorMessage: err.message })
+    );
+  }
 
   renderWeatherCard() {
     const { weather, errorMessage } = this.state;
