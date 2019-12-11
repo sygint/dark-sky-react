@@ -8,10 +8,11 @@ import { DEGREE_SIGN } from "../../constants";
 
 import "./App.css";
 
-import mock from "./mock.json";
+// import mock from "./mock.json";
 
 class App extends Component {
-  state = { weather: mock, errorMessage: "" };
+  state = { isLoaded: false, weather: {}, errorMessage: "" };
+  // state = { weather: mock, errorMessage: "" };
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
@@ -29,7 +30,7 @@ class App extends Component {
           const weather = await res.json();
 
 
-          this.setState({ weather });
+          this.setState({ weather, isLoaded: true });
         } catch (err) {
           console.log(err);
         }
@@ -53,7 +54,12 @@ class App extends Component {
   }
 
   render() {
-    const { currently } = this.state.weather;
+    const { weather, isLoaded } = this.state;
+    
+    if (!isLoaded) {
+      return 'loading...';
+    }
+
     const {
       windSpeed: wind,
       humidity,
@@ -61,7 +67,7 @@ class App extends Component {
       uvIndex,
       visibility,
       pressure
-    } = currently;
+    } = weather.currently;
 
     const formattedWindSpeed = Math.round(wind);
     const formattedHumidity = Math.round(humidity);
