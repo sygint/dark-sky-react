@@ -9,7 +9,7 @@ import "./WeatherCard.scss";
 
 function WeatherCard({ weather }) {
   const { currently, hourly } = weather;
-  const { icon, summary: currentSummary, temperature } = currently;
+  const { apparentTemperature: feelsLike, icon, summary: currentSummary, temperature } = currently;
   const { summary: hourlySummary } = hourly;
 
   const roundedTemperature = Math.round(temperature);
@@ -28,7 +28,9 @@ function WeatherCard({ weather }) {
               {roundedTemperature + DEGREE_SIGN} {currentSummary}.
             </div>
             <div className="details">
-              {/* <WeatherDetail name="Feels like" value="x" /> */}
+              <WeatherDetail name="Feels like" value={feelsLike}
+                unit={DEGREE_SIGN}
+                noSpace={true} />
               <WeatherDetail
                 name="Low"
                 value={tempLow}
