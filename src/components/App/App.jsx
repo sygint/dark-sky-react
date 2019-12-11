@@ -61,7 +61,7 @@ class App extends Component {
     }
 
     const {
-      windSpeed: wind,
+      windSpeed,
       humidity,
       dewPoint,
       uvIndex,
@@ -69,7 +69,7 @@ class App extends Component {
       pressure
     } = weather.currently;
 
-    const formattedWindSpeed = Math.round(wind);
+    const formattedWindSpeed = Math.round(windSpeed);
     const formattedHumidity = Math.round(humidity);
     const formattedDewPoint = Math.round(dewPoint);
     const formattedUvIndex = Math.round(uvIndex);
