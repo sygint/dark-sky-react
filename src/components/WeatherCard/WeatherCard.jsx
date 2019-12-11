@@ -28,7 +28,7 @@ function WeatherCard({ weather }) {
               {roundedTemperature + DEGREE_SIGN} {currentSummary}.
             </div>
             <div className="details">
-              <WeatherDetail name="Feels like" value="x" />
+              {/* <WeatherDetail name="Feels like" value="x" /> */}
               <WeatherDetail
                 name="Low"
                 value={tempLow}
