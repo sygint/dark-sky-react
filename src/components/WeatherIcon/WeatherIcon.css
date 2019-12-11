@@ -1,6 +1,6 @@
-.weather-icon {
-  width: 75px !important;
-  height: 75px !important;
+.weather-icon svg {
+  width: 80px;
+  height: 80px;
   background-position: center center;
   background-size: 200%;
 }
